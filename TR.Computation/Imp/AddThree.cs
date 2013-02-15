@@ -11,7 +11,9 @@ namespace TR.Computation.Imp
     {
         public void Compute(int input)
         {
-            CallBack("AddThree.Compute", input + 3);
+            var result = input + 3;
+            if (CallBack != null)
+                CallBack("AddThree", result);
         }
 
         public Action<string, int> CallBack { get; set; }

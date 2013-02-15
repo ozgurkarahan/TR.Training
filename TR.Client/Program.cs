@@ -13,13 +13,8 @@ namespace TR.Client
     {
         static void Main(string[] args)
         {
-            ICallBack callBack = new CallBack();
-            var pipeFactory = new DuplexChannelFactory<ICalculateService>( 
-                                            callBack,
-                                            new NetNamedPipeBinding(),
-                                            new EndpointAddress(Setting.URI));
-
-            ICalculateService calculateService = pipeFactory.CreateChannel();
+            Console.WriteLine("Enter a number to calculate or Type 'exit' for exit application");
+            ICalculateService calculateService = CreateChannelForService();
 
             while (true)
             {
@@ -30,13 +25,32 @@ namespace TR.Client
                 int input;
                 if (int.TryParse(str, out input))
                 {
-                    calculateService.Calculate(input);
+                    try
+                    {
+                        calculateService.Calculate(input);
+                    }
+                    catch(EndpointNotFoundException)
+                    {
+                        Console.WriteLine("Run the server before running the client!");
+                        break;
+                    }                   
                 }
                 else
                 {
                     Console.WriteLine("please enter a number!");
                 }
             }
+        }
+
+        private static ICalculateService CreateChannelForService()
+        {
+            ICallBack callBack = new CallBack();
+            var pipeFactory = new DuplexChannelFactory<ICalculateService>(
+                                            callBack,
+                                            new NetNamedPipeBinding(),
+                                            new EndpointAddress(Setting.URI));
+
+            return pipeFactory.CreateChannel();
         }
     }
 }

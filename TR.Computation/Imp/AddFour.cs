@@ -7,15 +7,19 @@ using TR.Computation.Interface;
 
 namespace TR.Computation.Imp
 {
-    public class AddTwo : ICompute
+    public class AddFour : ICompute
     {
+        #region ICompute Members
+
         public void Compute(int input)
         {
-            var result = input + 2;
+            var result = input + 4;
             if (CallBack != null)
-                CallBack("AddTwo", result);
+                CallBack("Addfour", result);
         }
 
         public Action<string, int> CallBack { get; set; }
+
+        #endregion
     }
 }

@@ -17,14 +17,16 @@ namespace TR.Computation
             _computeMethods.Add(new AddOne());
             _computeMethods.Add(new AddTwo());
             _computeMethods.Add(new AddThree());
+            _computeMethods.Add(new AddFour());
+            _computeMethods.Add(new AddFive());
         }
 
         public void ComputeAll(int input, Action<string, int> callBack)
         {
-            foreach (var compute in _computeMethods)
+            foreach (var method in _computeMethods)
             {
-                compute.CallBack = callBack;
-                compute.Compute(input);
+                method.CallBack = callBack;
+                Task.Factory.StartNew(() => method.Compute(input));
             }
         }
     }

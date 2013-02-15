@@ -44,6 +44,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Imp\AddFive.cs" />
+    <Compile Include="Imp\AddFour.cs" />
     <Compile Include="Imp\AddThree.cs" />
     <Compile Include="ComputationContainer.cs" />
     <Compile Include="Imp\AddOne.cs" />
