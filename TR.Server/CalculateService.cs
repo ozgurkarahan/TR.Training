@@ -17,9 +17,9 @@ namespace TR.Server
 
         public void Calculate(int input)
         {
-            ICallBack callback = OperationContext.Current.GetCallbackChannel<ICallBack>();
+            ICalculateCallBack callback = OperationContext.Current.GetCallbackChannel<ICalculateCallBack>();
             IComputationContainer container = new ComputationContainer();
-            container.ComputeAll(input, callback.Callback);
+            container.ComputeAll(input, callback.OnCalculateCallback);
         }
 
         #endregion

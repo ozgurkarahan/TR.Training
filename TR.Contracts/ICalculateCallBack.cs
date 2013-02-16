@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace TR.Contracts
 {
-    public interface ICallBack
+    public interface ICalculateCallBack
     {
         [OperationContract(IsOneWay = true)]
-        void Callback(string functionName, int result);
+        void OnCalculateCallback(string functionName, int result);
     }
 }

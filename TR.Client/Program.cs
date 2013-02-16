@@ -14,7 +14,8 @@ namespace TR.Client
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a number to calculate or Type 'exit' for exit application");
-            ICalculateService calculateService = CreateChannelForService();
+            IClient<ICalculateService> client = new NamedPipeClient<ICalculateService>();
+            ICalculateService calculateService = client.Proxy.CreateChannel();
 
             while (true)
             {
@@ -29,28 +30,24 @@ namespace TR.Client
                     {
                         calculateService.Calculate(input);
                     }
-                    catch(EndpointNotFoundException)
+                    catch (EndpointNotFoundException)
                     {
-                        Console.WriteLine("Run the server before running the client!");
+                        Console.WriteLine("Run the server before running the client! Enter for exit");
+                        Console.ReadLine();
                         break;
-                    }                   
+                    }
+                    catch (CommunicationException) 
+                    {
+                        Console.WriteLine("An error occured during channel communication! Enter for exit");
+                        Console.ReadLine();
+                        break;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("please enter a number!");
                 }
             }
-        }
-
-        private static ICalculateService CreateChannelForService()
-        {
-            ICallBack callBack = new CallBack();
-            var pipeFactory = new DuplexChannelFactory<ICalculateService>(
-                                            callBack,
-                                            new NetNamedPipeBinding(),
-                                            new EndpointAddress(Setting.URI));
-
-            return pipeFactory.CreateChannel();
         }
     }
 }

@@ -41,7 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICalculateService.cs" />
-    <Compile Include="ICallBack.cs" />
+    <Compile Include="ICalculateCallBack.cs" />
     <Compile Include="Setting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

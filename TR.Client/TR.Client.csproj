@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CallBack.cs" />
+    <Compile Include="CalculateCallBack.cs" />
+    <Compile Include="NamedPipeClient.cs" />
+    <Compile Include="IClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
