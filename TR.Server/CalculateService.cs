@@ -19,7 +19,16 @@ namespace TR.Server
         {
             ICalculateCallBack callback = OperationContext.Current.GetCallbackChannel<ICalculateCallBack>();
             IComputationContainer container = new ComputationContainer();
-            container.ComputeAll(input, callback.OnCalculateCallback);
+            try
+            {
+                container.ComputeAll(input, callback.OnCalculateCallback);
+            }
+            catch (AggregateException ex)
+            {
+                Console.WriteLine(ex.Message);
+                if (ex.InnerException != null)
+                    Console.WriteLine(ex.InnerException.Message);
+            }
         }
 
         #endregion

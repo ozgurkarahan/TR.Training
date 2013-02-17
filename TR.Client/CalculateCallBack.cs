@@ -8,6 +8,9 @@ using TR.Contracts;
 
 namespace TR.Client
 {
+    /// <summary>
+    /// Implementation of calculate callback contract
+    /// </summary>
     public class CalculateCallBack : ICalculateCallBack
     {
         #region ICalculateCallBack Members

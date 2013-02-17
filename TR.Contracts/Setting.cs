@@ -8,6 +8,8 @@ namespace TR.Contracts
 {
     public static class Setting
     {
-        public static string URI = "net.pipe://localhost/Calculate";
+        public static string PipeUri = "net.pipe://localhost/Calculate";
+
+        public static string TcpUri = "net.tcp://localhost/Calculate";
     }
 }

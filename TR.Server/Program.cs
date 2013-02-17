@@ -17,12 +17,14 @@ namespace TR.Server
             Console.WriteLine("server is starting");
 
             var binding = new NetNamedPipeBinding();
-            var host = new ServiceHost(typeof(CalculateService), new Uri(Setting.URI));
+            var host = new ServiceHost(typeof(CalculateService), new Uri(Setting.PipeUri));
             host.AddServiceEndpoint(typeof(ICalculateService), binding, "");
             host.Open();
 
             Console.WriteLine("Hosting started...");
+            Console.WriteLine("Press enter to exit...");
             Console.Read();
+            host.Close();
         }
     }
 }

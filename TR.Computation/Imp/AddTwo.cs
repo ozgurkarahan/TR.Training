@@ -7,15 +7,16 @@ using TR.Computation.Interface;
 
 namespace TR.Computation.Imp
 {
-    public class AddTwo : ICompute
+    public class AddTwo : ComputeBase
     {
-        public void Compute(int input)
+        public override int Compute(int input)
         {
-            var result = input + 2;
-            if (CallBack != null)
-                CallBack("AddTwo", result);
+            return input + 2;
         }
 
-        public Action<string, int> CallBack { get; set; }
+        public override string FuncionName
+        {
+            get { return "AddTwo"; }
+        }
     }
 }

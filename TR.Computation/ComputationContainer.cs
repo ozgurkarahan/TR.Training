@@ -10,10 +10,10 @@ namespace TR.Computation
 {
     public class ComputationContainer : IComputationContainer
     {
-        private IList<ICompute> _computeMethods;
+        private IList<ComputeBase> _computeMethods;
         public ComputationContainer()
         {
-            _computeMethods = new List<ICompute>();
+            _computeMethods = new List<ComputeBase>();
             _computeMethods.Add(new AddOne());
             _computeMethods.Add(new AddTwo());
             _computeMethods.Add(new AddThree());
@@ -23,11 +23,12 @@ namespace TR.Computation
 
         public void ComputeAll(int input, Action<string, int> callBack)
         {
+            IList<Task> tasks = new List<Task>();
             foreach (var method in _computeMethods)
             {
-                method.CallBack = callBack;
-                Task.Factory.StartNew(() => method.Compute(input));
+                tasks.Add(Task.Factory.StartNew(() => method.Execute(input, callBack)));
             }
+            Task.WaitAll(tasks.ToArray());
         }
     }
 }

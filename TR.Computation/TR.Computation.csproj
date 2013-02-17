@@ -51,7 +51,7 @@
     <Compile Include="Imp\AddOne.cs" />
     <Compile Include="Imp\AddTwo.cs" />
     <Compile Include="IComputationContainer.cs" />
-    <Compile Include="Interface\ICompute.cs" />
+    <Compile Include="Interface\ComputeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

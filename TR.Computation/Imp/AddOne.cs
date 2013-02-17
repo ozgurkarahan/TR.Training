@@ -8,15 +8,16 @@ using TR.Computation.Interface;
 
 namespace TR.Computation.Imp
 {
-    public class AddOne : ICompute
+    public class AddOne : ComputeBase
     {
-        public void Compute(int input)
+        public override int Compute(int input)
         {
-            var result = ++input;
-            if (CallBack != null)
-                CallBack("AddOne", result);
+            return ++input;
         }
 
-        public Action<string, int> CallBack { get; set; }
+        public override string FuncionName
+        {
+            get { return "AddOne"; }
+        }
     }
 }

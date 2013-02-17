@@ -1,9 +1,15 @@
 ﻿using System;
 namespace TR.Client
 {
-    interface IClient<T>
+    /// <summary>
+    /// Client interface to create a duplex channel with a callback contract
+    /// </summary>
+    /// <typeparam name="T">Service Contract</typeparam>
+    /// <typeparam name="K">Callback Contract</typeparam>
+    interface IClient<T,K>
     {
-        TR.Contracts.ICalculateCallBack CallBack { get; set; }
+        K CallBackContract { get; set; }
+
         System.ServiceModel.DuplexChannelFactory<T> Proxy { get; set; }
     }
 }

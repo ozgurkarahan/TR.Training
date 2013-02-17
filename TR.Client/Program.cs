@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using TR.Contracts;
+using TR.Client.Binding;
 
 namespace TR.Client
 {
@@ -14,7 +15,7 @@ namespace TR.Client
         static void Main(string[] args)
         {
             Console.WriteLine("Enter a number to calculate or Type 'exit' for exit application");
-            IClient<ICalculateService> client = new NamedPipeClient<ICalculateService>();
+            IClient<ICalculateService, ICalculateCallBack> client = new NamedPipeClient();
             ICalculateService calculateService = client.Proxy.CreateChannel();
 
             while (true)
@@ -48,6 +49,11 @@ namespace TR.Client
                     Console.WriteLine("please enter a number!");
                 }
             }
+
+            var communicationObject = calculateService as ICommunicationObject;
+            if (communicationObject != null && communicationObject.State == CommunicationState.Opened)
+                communicationObject.Close();
+            
         }
     }
 }

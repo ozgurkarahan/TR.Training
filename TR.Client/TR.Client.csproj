@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculateCallBack.cs" />
-    <Compile Include="NamedPipeClient.cs" />
+    <Compile Include="Binding\NamedPipeClient.cs" />
     <Compile Include="IClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

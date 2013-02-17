@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using TR.Computation.Interface;
 
 namespace TR.Computation.Imp
 {
-    public class AddFour : ICompute
+    public class AddFour : ComputeBase
     {
-        #region ICompute Members
-
-        public void Compute(int input)
+        public override int Compute(int input)
         {
-            var result = input + 4;
-            if (CallBack != null)
-                CallBack("Addfour", result);
+            return input + 4;
         }
 
-        public Action<string, int> CallBack { get; set; }
-
-        #endregion
+        public override string FuncionName
+        {
+            get { return "AddFour"; }
+        }
     }
 }
