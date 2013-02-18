@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TR.Computation.Imp;
-using TR.Computation.Interface;
+
+using TR.Computation.Functions;
+using TR.Computation.Base;
 
 namespace TR.Computation
 {

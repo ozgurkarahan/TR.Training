@@ -14,12 +14,12 @@ namespace TR.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number to calculate or Type 'exit' for exit application");
             IClient<ICalculateService, ICalculateCallBack> client = new NamedPipeClient();
             ICalculateService calculateService = client.Proxy.CreateChannel();
 
             while (true)
             {
+                Console.WriteLine("Enter a number to calculate or Type 'exit' for exit application");
                 string str = Console.ReadLine();
                 if (str.ToLower() == "exit")
                     break;

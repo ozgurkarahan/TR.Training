@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TR.Computation.Interface;
+﻿using TR.Computation.Base;
 
-namespace TR.Computation.Imp
+namespace TR.Computation.Functions
 {
     public class AddTwo : ComputeBase
     {
@@ -16,7 +11,7 @@ namespace TR.Computation.Imp
 
         public override string FuncionName
         {
-            get { return "AddTwo"; }
+            get { return FunctionNames.ADD_TWO; }
         }
     }
 }

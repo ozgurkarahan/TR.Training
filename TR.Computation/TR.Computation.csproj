@@ -44,14 +44,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Imp\AddFive.cs" />
-    <Compile Include="Imp\AddFour.cs" />
-    <Compile Include="Imp\AddThree.cs" />
+    <Compile Include="FunctionNames.cs" />
+    <Compile Include="Functions\AddFive.cs" />
+    <Compile Include="Functions\AddFour.cs" />
+    <Compile Include="Functions\AddThree.cs" />
     <Compile Include="ComputationContainer.cs" />
-    <Compile Include="Imp\AddOne.cs" />
-    <Compile Include="Imp\AddTwo.cs" />
+    <Compile Include="Functions\AddOne.cs" />
+    <Compile Include="Functions\AddTwo.cs" />
     <Compile Include="IComputationContainer.cs" />
-    <Compile Include="Interface\ComputeBase.cs" />
+    <Compile Include="Base\ComputeBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

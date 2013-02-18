@@ -9,7 +9,7 @@ using TR.Contracts;
 namespace TR.Client
 {
     /// <summary>
-    /// Implementation of calculate callback contract
+    /// Implements calculate callback contracts
     /// </summary>
     public class CalculateCallBack : ICalculateCallBack
     {
@@ -18,6 +18,7 @@ namespace TR.Client
         public void OnCalculateCallback(string functionName, int result)
         {
             Console.WriteLine(string.Format("FunctionName: {0}, result: {1}", functionName, result));
+            Console.WriteLine();
         }
 
         #endregion

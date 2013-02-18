@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TR.Computation.Interface
+namespace TR.Computation.Base
 {
     public abstract class ComputeBase
     {
