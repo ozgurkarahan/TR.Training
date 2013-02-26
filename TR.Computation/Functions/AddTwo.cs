@@ -4,12 +4,12 @@ namespace TR.Computation.Functions
 {
     public class AddTwo : ComputeBase
     {
-        public override int Compute(int input)
+        protected override int Compute(int input)
         {
             return input + 2;
         }
 
-        public override string FuncionName
+        protected override string FuncionName
         {
             get { return FunctionNames.ADD_TWO; }
         }

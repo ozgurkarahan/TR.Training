@@ -8,6 +8,11 @@ namespace TR.Computation.Base
 {
     public abstract class ComputeBase
     {
+        protected ComputeBase()
+        {
+
+        }
+
         public void Execute(int input, Action<string, int> CallBack)
         {
             var result = this.Compute(input);
@@ -15,7 +20,7 @@ namespace TR.Computation.Base
                 CallBack(this.FuncionName, result);
         }
 
-        public abstract int Compute(int input);
-        public abstract string FuncionName { get; }
+        protected abstract int Compute(int input);
+        protected abstract string FuncionName { get; }
     }
 }

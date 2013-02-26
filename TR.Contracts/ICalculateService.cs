@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TR.Contracts
 {
-    [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ICalculateCallBack))]
+    [ServiceContract(CallbackContract = typeof(ICalculateCallBack))]
     public interface ICalculateService
     {
         [OperationContract]

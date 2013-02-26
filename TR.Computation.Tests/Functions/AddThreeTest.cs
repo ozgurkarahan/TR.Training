@@ -9,26 +9,6 @@ namespace TR.Computation.Tests.Functions
     public class AddThreeTest
     {
         [TestMethod]
-        public void ComputeTest()
-        {
-            var add = new AddThree();
-
-            var result = add.Compute(0);
-
-            Assert.AreEqual(3, result);
-        }
-
-        [TestMethod]
-        public void FunctionNameTest()
-        {
-            var add = new AddThree();
-
-            var name = add.FuncionName;
-
-            Assert.AreEqual(FunctionNames.ADD_THREE, name);
-        }
-
-        [TestMethod]
         public void should_execute_compute_first_then_call_callback_action()
         {
             string name = string.Empty;
