@@ -10,7 +10,7 @@ using TR.Computation;
 
 namespace TR.Server
 {
-    [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple)]
+    [ServiceBehavior]
     public class CalculateService : ICalculateService
     {
         #region ICalculateService Members
@@ -28,6 +28,8 @@ namespace TR.Server
                 Console.WriteLine(ex.Message);
                 if (ex.InnerException != null)
                     Console.WriteLine(ex.InnerException.Message);
+                if (OperationContext.Current.Channel.State == CommunicationState.Opened)
+                    OperationContext.Current.Channel.Close();
             }
         }
 
