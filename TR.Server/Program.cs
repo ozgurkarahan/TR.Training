@@ -15,10 +15,7 @@ namespace TR.Server
         static void Main(string[] args)
         {
             Console.WriteLine("server is starting");
-
-            var binding = new NetNamedPipeBinding();
-            var host = new ServiceHost(typeof(CalculateService), new Uri(Setting.PipeUri));
-            host.AddServiceEndpoint(typeof(ICalculateService), binding, "");
+            var host = new ServiceHost(typeof(CalculateService));
             host.Open();
 
             Console.WriteLine("Hosting started...");
