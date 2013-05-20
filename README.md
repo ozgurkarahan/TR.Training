@@ -3,9 +3,13 @@ TR.Training
 
 The project consists of implementing an application which applies the following functions on number:  
 f1: x+1
+
 f2: x+2
+
 f3: x+3
+
 f4: x+4
+
 f5: x+5
 
 The application is divided into two parts: the client and a server which does the computations.
