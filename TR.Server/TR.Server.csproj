@@ -49,11 +49,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\TR.Contracts\TR.Contracts.csproj">
       <Project>{1927447c-a93f-42fa-927f-4a59eb2bf0a8}</Project>
       <Name>TR.Contracts</Name>
