@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using TR.Contracts;
+using TR.Client.CalculateService;
 
 namespace TR.Client
 {
     /// <summary>
     /// Implements calculate callback contracts
     /// </summary>
-    public class CalculateCallBack : ICalculateCallBack
+    public class CalculateCallBack : ICalculateServiceCallback
     {
         #region ICalculateCallBack Members
 
